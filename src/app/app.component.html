@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <h1>ToDo app</h1>
+  <div class="container">
+    <input type="text" #todoTitle placeholder="Title">
+    <input type="text" #todoText placeholder="Text">
+    <button (click)='addNewTodo(todoTitle.value, todoText.value)'>Add</button>
+    <div class="list">
+      <ul>
+        <li *ngFor='let todo of todos'>
+          <div class="leftCol">
+            <h2>{{todo.title}}
+            </h2>
+            <p>{{todo.text}}</p>
+          </div>
+          <button class="del" (click)=deleteToDo(todo)>{{'&#10005;'}}</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
